@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h4(class="chatSender")= 'chat with ' + receiver.username
+  br
+  table
+    tr
+      td
+        div#chatLog
+          each val in data
+            p(class="chatSender")= val.user[0].username +': '
+            span= val.msg
+            br
+    tr
+      td
+        form(method="post", id='msgForm')
+          input.form-control(type='text', name="msg", id='msg', placeholder='Enter your message', style='width: 90%;')
+          button.btn.btn-default(type='submit') Submit
+        input(type='hidden', value=receiver.id      , id='RecUserID')
+        input(type='hidden', value=receiver.username , id='RecUserName')
+        input(type='hidden', value=sender.id      , id='SndUserID')
+        input(type='hidden', value=sender.username , id='SndUserName')
+        input(type='hidden', value= chatID , id='chatID')
+
+  script(type='text/javascript', src='https://code.jquery.com/jquery-1.11.1.min.js')
+  script(type='text/javascript', src='/socket.io/socket.io.js')
+  script(type='text/javascript', src='/javascripts/chatJq.js')

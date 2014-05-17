@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h4(class="chatSender")= 'Select a user to chat with '
+  br
+  table
+    each val in data
+      tr
+        td
+          a(href='/chat/' + val._id)= val.username 

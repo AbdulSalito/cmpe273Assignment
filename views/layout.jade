@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div#outerarea
+      div#innerarea
+        div#header
+          a.nav(href="/"): img(src='/logo.png', height='50')= 'Chat System'
+          div#nav
+            a.nav(href="/") Home
+            span  | 
+            - if (!user) {
+              a.nav(href="/login") Login
+            - } else {
+              span welcome: #{user}  
+              a.nav(href="/logout") Logout
+            - }
+        div#bodyContent
+          block content
+        div#footer All copy rights belongs to Chat system project

@@ -1,0 +1,21 @@
+{
+  "name": "ChatSystem",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "express": "~4.0.0",
+    "static-favicon": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "morgan": "latest",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0",
+    "mongoose": "latest",
+    "passport" : "latest",     
+    "passport-local" : "latest",
+    "crypto": "latest"
+  }
+}

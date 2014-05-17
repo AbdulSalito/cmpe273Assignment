@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p(style='display:inline;')= 'Are you a member yet? please login into your account or '
+  a(href='/register', style='display:inline;')= 'Click here to register!'
+  form(method="post")
+    .form-group
+        input.form-control(type='text', name="username", placeholder='Enter Username')
+    .form-group
+      input.form-control(type='password', name="password", placeholder='Password')
+    button.btn.btn-default(type='submit') Submit
+    a(href='/')
+      button.btn.btn-primary(type="button") Cancel
